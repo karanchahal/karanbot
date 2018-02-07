@@ -25,7 +25,7 @@ class Chatbox extends Component {
     }
 
     addToChat(message) {
-        messages = this.state.messages
+        let messages = this.state.messages
         messages.push(message)
         this.setState({ messages })
     }

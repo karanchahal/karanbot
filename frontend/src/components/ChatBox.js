@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 
 class Chatbox extends Component {
     constructor(props) {
@@ -24,10 +24,31 @@ class Chatbox extends Component {
         })
     }
 
+    addToChat(message) {
+        messages = this.state.messages
+        messages.push(message)
+        this.setState({ messages })
+    }
+
+    extractMessage(res) {
+        let body = res.data
+        this.addToChat(body.message)
+    }
+
     sendMessage() {
         // trigger action send message 
         // reducer will automatically get result
-        console.log('Send Message ' + this.state.message)
+        let url = '/message'
+        let options = {
+            method: 'post',
+            url: url,
+            data: {message: this.state.message}
+        }
+
+        axios(options)
+        .then(this.extractMessage)
+        .catch((err) => console.log(err))
+        
     }
 
     updateMessage(event) {

@@ -1,4 +1,4 @@
-# Professional App
+# Karan Beep Boop
 [![CircleCI](https://circleci.com/gh/karanchahal/professional-app/tree/master.svg?style=shield)](https://circleci.com/gh/karanchahal/professional-app/tree/master)
 ![awesome](https://img.shields.io/badge/awesome-yes-green.svg)
 <br />
